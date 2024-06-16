@@ -1,9 +1,21 @@
 import Link from "next/link";
 import React from "react";
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarTrigger,
+} from "@/components/ui/menubar";
+
+import { Menu } from "lucide-react";
 
 export const Navbar = () => {
   return (
     <div className='h-full flex justify-between items-center max-w-6xl mx-auto px-4 sm:px-8 md:px-12 xl:px-0'>
+      {/* logo */}
       <div>
         <Link
           className='text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center gap-3'
@@ -15,7 +27,27 @@ export const Navbar = () => {
           </span>
         </Link>
       </div>
-      <div>right side</div>
+      {/* responsive user menu */}
+      <div>
+        <Menubar>
+          <MenubarMenu>
+            <MenubarTrigger className='bg-blue-50'>
+              <Menu size={32} />
+            </MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem>
+                New Tab{" "}
+                <MenubarShortcut>⌘T</MenubarShortcut>
+              </MenubarItem>
+              <MenubarItem>New Window</MenubarItem>
+              <MenubarSeparator />
+              <MenubarItem>Share</MenubarItem>
+              <MenubarSeparator />
+              <MenubarItem>Print</MenubarItem>
+            </MenubarContent>
+          </MenubarMenu>
+        </Menubar>
+      </div>
     </div>
   );
 };
