@@ -21,8 +21,17 @@ export const Navbar = () => {
 
   return (
     <div className='h-full flex justify-between items-center max-w-6xl mx-auto px-4 sm:px-8 md:px-12 xl:px-0'>
+      <div className='hidden md:flex gap-8'>
+        {links.map(({ title, url }) => {
+          return (
+            <Link href={url} key={title}>
+              {title}
+            </Link>
+          );
+        })}
+      </div>
       {/* logo */}
-      <div>
+      <div className='md:hidden'>
         <Link
           className='text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center gap-3'
           href={"/"}
@@ -35,7 +44,7 @@ export const Navbar = () => {
       </div>
       {/* responsive user menu */}
 
-      <div>
+      <div className='md:hidden'>
         <button
           onClick={() => setOpen((prevState) => !prevState)}
           className='w-10 h-8 flex flex-col justify-between z-50 relative'
@@ -49,9 +58,6 @@ export const Navbar = () => {
               size={40}
             />
           )}
-          {/* <div className='w-10 h-1 bg-white rounded'></div>
-          <div className='w-10 h-1 bg-white rounded'></div>
-          <div className='w-10 h-1 bg-white rounded'></div> */}
         </button>
 
         {open && (
