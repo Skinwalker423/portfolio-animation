@@ -14,14 +14,15 @@ import {
 
 import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
-import { links } from "../../constants";
+import { links, socials } from "../../constants";
+import Image from "next/image";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className='h-full flex justify-between items-center max-w-6xl mx-auto px-4 sm:px-8 md:px-12 xl:px-0'>
-      <div className='hidden md:flex gap-8'>
+    <div className='h-full flex justify-between items-center max-w-6xl mx-auto px-4 sm:px-8 md:px-12 xl:px-0 lg:grid lg:grid-cols-3'>
+      <div className='hidden md:flex gap-8 justify-start'>
         {links.map(({ title, url }) => {
           return (
             <Link href={url} key={title}>
@@ -31,7 +32,7 @@ export const Navbar = () => {
         })}
       </div>
       {/* logo */}
-      <div className='md:hidden'>
+      <div className='md:hidden lg:flex justify-center'>
         <Link
           className='text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center gap-3'
           href={"/"}
@@ -41,6 +42,20 @@ export const Navbar = () => {
             .dev
           </span>
         </Link>
+      </div>
+      <div className='hidden md:flex gap-4 justify-end'>
+        {socials.map(({ alt, href, src }) => {
+          return (
+            <Link key={alt} href={href}>
+              <Image
+                src={src}
+                alt={alt}
+                width={24}
+                height={24}
+              />
+            </Link>
+          );
+        })}
       </div>
       {/* responsive user menu */}
 
