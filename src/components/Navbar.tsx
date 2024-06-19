@@ -28,26 +28,24 @@ export const Navbar = () => {
         </Link>
       </div>
       {/* responsive user menu */}
-      <div>
-        <Menubar>
-          <MenubarMenu>
-            <MenubarTrigger className='bg-blue-50'>
-              <Menu size={32} />
-            </MenubarTrigger>
-            <MenubarContent>
-              <MenubarItem>
-                New Tab{" "}
-                <MenubarShortcut>⌘T</MenubarShortcut>
-              </MenubarItem>
-              <MenubarItem>New Window</MenubarItem>
-              <MenubarSeparator />
-              <MenubarItem>Share</MenubarItem>
-              <MenubarSeparator />
-              <MenubarItem>Print</MenubarItem>
-            </MenubarContent>
-          </MenubarMenu>
-        </Menubar>
-      </div>
+
+      <Menubar className='p-0'>
+        <MenubarMenu>
+          <MenubarTrigger className='w-full border-none'>
+            <Menu size={32} />
+          </MenubarTrigger>
+          <MenubarContent>
+            <MenubarItem>
+              New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+            </MenubarItem>
+            <MenubarItem>New Window</MenubarItem>
+            <MenubarSeparator />
+            <MenubarItem>Share</MenubarItem>
+            <MenubarSeparator />
+            <MenubarItem>Print</MenubarItem>
+          </MenubarContent>
+        </MenubarMenu>
+      </Menubar>
     </div>
   );
 };
