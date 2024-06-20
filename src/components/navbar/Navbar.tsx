@@ -1,21 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import React, { useState } from "react";
-import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarTrigger,
-} from "@/components/ui/menubar";
+import Link from "next/link";
+import Image from "next/image";
 
 import { Menu } from "lucide-react";
-import { Button } from "./ui/button";
-import { links, socials } from "../../constants";
-import Image from "next/image";
+
+import { links, socials } from "../../../constants";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
