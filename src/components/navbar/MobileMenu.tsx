@@ -22,7 +22,7 @@ export const MobileMenu = () => {
       </button>
 
       {open && (
-        <div className='absolute top-0 left-0 w-screen h-screen bg-black flex flex-col items-center justify-center gap-8 text-4xl text-white'>
+        <nav className='absolute top-0 left-0 w-screen h-screen bg-black flex flex-col items-center justify-center gap-8 text-4xl text-white'>
           {links.map(({ title, url }) => {
             return (
               <Link href={url} key={title}>
@@ -30,7 +30,7 @@ export const MobileMenu = () => {
               </Link>
             );
           })}
-        </div>
+        </nav>
       )}
     </div>
   );
