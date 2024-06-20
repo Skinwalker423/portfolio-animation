@@ -31,7 +31,7 @@ export const socials = [
   {
     alt: "Dribble icon",
     src: "/dribbble.png",
-    href: "https://dribble.com",
+    href: "https://dribbble.com",
   },
   {
     alt: "Instagram icon",
@@ -39,9 +39,9 @@ export const socials = [
     href: "https://instagram.com",
   },
   {
-    alt: "Pintrest icon",
-    src: "/pintrest.png",
-    href: "https://pintrest.com",
+    alt: "Pinterest icon",
+    src: "/pinterest.png",
+    href: "https://pinterest.com",
   },
   {
     alt: "Linkedin icon",
