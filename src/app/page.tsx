@@ -14,7 +14,7 @@ export default function Home() {
       </div>
       <div className='flex flex-1 w-full flex-col px-2 justify-center items-center gap-8'>
         <h1 className='text-3xl font-bold text-center'>
-          Hero title
+          Crafting Digital Experiences, Designing Tomorrow.
         </h1>
         <p className='text-clip'>
           Lorem ipsum dolor, sit amet consectetur
@@ -24,10 +24,10 @@ export default function Home() {
           necessitatibus mollitia illo optio ipsa!
         </p>
         <div className='space-x-3'>
-          <Button variant={"outline"}>Learn more</Button>
-          <Button className='bg-secondary text-secondary-foreground'>
-            Get started
+          <Button className='ring-1' variant={"outline"}>
+            Learn more
           </Button>
+          <Button>Get started</Button>
         </div>
       </div>
     </div>
