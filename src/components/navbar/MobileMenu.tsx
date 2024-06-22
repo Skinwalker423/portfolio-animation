@@ -2,20 +2,22 @@
 
 import React, { useState } from "react";
 
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { links } from "../../../constants";
 import Link from "next/link";
 
 export const MobileMenu = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className='md:hidden'>
+    <div className='md:hidden z-40'>
       <button
         onClick={() => setOpen((prevState) => !prevState)}
         className='w-10 h-8 flex flex-col justify-between z-50 relative'
       >
         {open ? (
-          <p className='z-50 text-white'>X</p>
+          <p className='z-50 text-white text-3xl'>
+            <X size={40} />
+          </p>
         ) : (
           <Menu className='z-50' color='black' size={40} />
         )}
