@@ -2,25 +2,69 @@
 
 import React, { useState } from "react";
 
-import { Menu, X } from "lucide-react";
 import { links } from "../../../constants";
 import Link from "next/link";
+import { type Variants, motion } from "framer-motion";
 
 export const MobileMenu = () => {
   const [open, setOpen] = useState(false);
+
+  const topMenuBarVariant: Variants | undefined = {
+    opened: {
+      rotate: 45,
+      transition: {
+        duration: 0.25,
+        ease: "easeIn",
+      },
+      backgroundColor: "rgb(255,255,255)",
+    },
+    closed: {
+      rotate: 0,
+    },
+  };
+  const centerMenuBarVariant: Variants | undefined = {
+    opened: {
+      opacity: 0,
+    },
+    closed: {
+      opacity: 1,
+    },
+  };
+  const bottomMenuBarVariant: Variants | undefined = {
+    opened: {
+      rotate: -45,
+      transition: {
+        duration: 0.25,
+        ease: "easeIn",
+      },
+      backgroundColor: "rgb(255,255,255)",
+    },
+    closed: {
+      rotate: 0,
+    },
+  };
+
   return (
     <div className='md:hidden z-40'>
       <button
         onClick={() => setOpen((prevState) => !prevState)}
         className='w-10 h-8 flex flex-col justify-between z-50 relative'
       >
-        {open ? (
-          <p className='z-50 text-white text-3xl'>
-            <X size={40} />
-          </p>
-        ) : (
-          <Menu className='z-50' color='black' size={40} />
-        )}
+        <motion.div
+          animate={open ? "opened" : "closed"}
+          variants={topMenuBarVariant}
+          className='w-10 h-1 bg-black rounded origin-left z-50'
+        ></motion.div>
+        <motion.div
+          animate={open ? "opened" : "closed"}
+          variants={centerMenuBarVariant}
+          className='w-10 h-1 bg-black rounded z-50'
+        ></motion.div>
+        <motion.div
+          animate={open ? "opened" : "closed"}
+          variants={bottomMenuBarVariant}
+          className='w-10 h-1 bg-black rounded origin-left z-50'
+        ></motion.div>
       </button>
 
       {open && (
