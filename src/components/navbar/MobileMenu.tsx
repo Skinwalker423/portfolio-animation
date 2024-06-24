@@ -4,11 +4,7 @@ import React, { useState } from "react";
 
 import { links } from "../../../constants";
 import Link from "next/link";
-import {
-  type Variants,
-  motion,
-  stagger,
-} from "framer-motion";
+import { type Variants, motion } from "framer-motion";
 
 export const MobileMenu = () => {
   const [open, setOpen] = useState(false);
