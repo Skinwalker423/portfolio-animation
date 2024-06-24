@@ -4,7 +4,7 @@ import { HeroTextBox } from "./HeroTextBox";
 
 export const HeroSection = () => {
   return (
-    <div className='flex flex-col w-full h-full md:flex-row gap-10'>
+    <div className='flex flex-col w-full h-full md:flex-row gap-1 sm:gap-10'>
       <HeroImage src='/hero.png' alt='winter is coming' />
       <HeroTextBox />
     </div>
