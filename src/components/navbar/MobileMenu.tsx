@@ -44,11 +44,12 @@ export const MobileMenu = () => {
     },
   };
 
-  const linksVariants: Variants | undefined = {
+  const linksListVariants: Variants | undefined = {
     opened: {
-      x: "0",
+      x: 0,
       transition: {
-        staggerChildren: 0.5,
+        when: "beforeChildren",
+        staggerChildren: 0.2,
       },
     },
     closed: {
@@ -58,12 +59,22 @@ export const MobileMenu = () => {
 
   const linkVariants: Variants | undefined = {
     opened: {
+      scale: 1,
       opacity: 1,
-      x: "0",
+      transition: {
+        duration: 0.1,
+        ease: [0, 0.71, 0.2, 1.01],
+        scale: {
+          type: "spring",
+          damping: 5,
+          stiffness: 100,
+          restDelta: 0.001,
+        },
+      },
     },
     closed: {
       opacity: 0,
-      x: "100vw",
+      scale: 0.5,
     },
   };
 
@@ -90,26 +101,23 @@ export const MobileMenu = () => {
         ></motion.div>
       </button>
 
-      {open && (
+      {open && links.length && (
         <motion.nav
           initial={"closed"}
-          variants={linksVariants}
+          variants={linksListVariants}
           animate={open ? "opened" : "closed"}
           className='absolute top-0 left-0 w-screen h-screen bg-black flex flex-col items-center justify-center gap-8 text-4xl text-white'
         >
-          {links &&
-            links.map(({ title, url }) => {
-              return (
-                <motion.div
-                  initial={"closed"}
-                  key={title}
-                  variants={linkVariants}
-                  animate={open ? "opened" : "closed"}
-                >
-                  <Link href={url}>{title}</Link>
-                </motion.div>
-              );
-            })}
+          {links.map(({ title, url }) => {
+            return (
+              <motion.div
+                key={title}
+                variants={linkVariants}
+              >
+                <Link href={url}>{title}</Link>
+              </motion.div>
+            );
+          })}
         </motion.nav>
       )}
     </div>
