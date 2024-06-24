@@ -52,7 +52,7 @@ export const MobileMenu = () => {
     opened: {
       x: "0",
       transition: {
-        staggerChildren: 2,
+        staggerChildren: 0.5,
       },
     },
     closed: {
@@ -63,12 +63,11 @@ export const MobileMenu = () => {
   const linkVariants: Variants | undefined = {
     opened: {
       opacity: 1,
-      transition: {
-        duration: 3,
-      },
+      x: "0",
     },
     closed: {
       opacity: 0,
+      x: "100vw",
     },
   };
 
