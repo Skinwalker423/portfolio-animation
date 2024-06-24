@@ -50,9 +50,21 @@ export const MobileMenu = () => {
 
   const linksVariants: Variants | undefined = {
     opened: {
+      x: "0",
+      transition: {
+        staggerChildren: 2,
+      },
+    },
+    closed: {
+      x: "100vw",
+    },
+  };
+
+  const linkVariants: Variants | undefined = {
+    opened: {
       opacity: 1,
       transition: {
-        staggerChildren: 1,
+        duration: 3,
       },
     },
     closed: {
@@ -85,17 +97,24 @@ export const MobileMenu = () => {
 
       {open && (
         <motion.nav
+          initial={"closed"}
           variants={linksVariants}
           animate={open ? "opened" : "closed"}
           className='absolute top-0 left-0 w-screen h-screen bg-black flex flex-col items-center justify-center gap-8 text-4xl text-white'
         >
-          {links.map(({ title, url }) => {
-            return (
-              <Link href={url} key={title}>
-                {title}
-              </Link>
-            );
-          })}
+          {links &&
+            links.map(({ title, url }) => {
+              return (
+                <motion.div
+                  initial={"closed"}
+                  key={title}
+                  variants={linkVariants}
+                  animate={open ? "opened" : "closed"}
+                >
+                  <Link href={url}>{title}</Link>
+                </motion.div>
+              );
+            })}
         </motion.nav>
       )}
     </div>
