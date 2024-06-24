@@ -4,7 +4,11 @@ import React, { useState } from "react";
 
 import { links } from "../../../constants";
 import Link from "next/link";
-import { type Variants, motion } from "framer-motion";
+import {
+  type Variants,
+  motion,
+  stagger,
+} from "framer-motion";
 
 export const MobileMenu = () => {
   const [open, setOpen] = useState(false);
@@ -44,6 +48,18 @@ export const MobileMenu = () => {
     },
   };
 
+  const linksVariants: Variants | undefined = {
+    opened: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 1,
+      },
+    },
+    closed: {
+      opacity: 0,
+    },
+  };
+
   return (
     <div className='md:hidden z-40'>
       <button
@@ -68,7 +84,11 @@ export const MobileMenu = () => {
       </button>
 
       {open && (
-        <nav className='absolute top-0 left-0 w-screen h-screen bg-black flex flex-col items-center justify-center gap-8 text-4xl text-white'>
+        <motion.nav
+          variants={linksVariants}
+          animate={open ? "opened" : "closed"}
+          className='absolute top-0 left-0 w-screen h-screen bg-black flex flex-col items-center justify-center gap-8 text-4xl text-white'
+        >
           {links.map(({ title, url }) => {
             return (
               <Link href={url} key={title}>
@@ -76,7 +96,7 @@ export const MobileMenu = () => {
               </Link>
             );
           })}
-        </nav>
+        </motion.nav>
       )}
     </div>
   );
