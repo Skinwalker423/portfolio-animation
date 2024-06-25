@@ -45,6 +45,23 @@ export const TransitionProvider = ({
           )}
         />
         <motion.div
+          initial={{ opacity: 1 }}
+          animate={{
+            opacity: 0,
+          }}
+          exit={{
+            opacity: 0,
+          }}
+          transition={{
+            duration: 1,
+            ease: "easeOut",
+          }}
+          className='text-white fixed m-auto top-0 left-0 bottom-0 right-0 text-8xl w-fit h-fit z-50'
+        >
+          {pathname.toUpperCase().replace("/", "") ||
+            "Home"}
+        </motion.div>
+        <motion.div
           initial={{ height: "140vh" }}
           animate={{
             height: "0vh",
@@ -57,6 +74,7 @@ export const TransitionProvider = ({
             transitionConfig.color
           )}
         />
+
         <div className='h-24'>
           <Navbar />
         </div>
