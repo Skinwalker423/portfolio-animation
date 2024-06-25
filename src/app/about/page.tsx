@@ -1,7 +1,7 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import { type Variants, motion } from "framer-motion";
-import { useFollowPointer } from "@/hooks/useFollowPointer";
+import { PageTransition } from "@/components/PageTransition";
 
 const AboutPage = () => {
   // const ref = useRef(null);
@@ -28,23 +28,25 @@ const AboutPage = () => {
   };
 
   return (
-    <div className='h-full flex items-center justify-center'>
-      <motion.div
-        initial={{ x: -100 }}
-        animate={"variant1"}
-        variants={variants}
-        transition={{ bounce: 1, duration: 2, delay: 2 }}
-        className='w-96 h-40 bg-red-400 rounded'
-      >
-        AboutPage
-      </motion.div>
-      {/* <motion.div
+    <PageTransition>
+      <div className='h-full flex items-center justify-center'>
+        <motion.div
+          initial={{ x: -100 }}
+          animate={"variant1"}
+          variants={variants}
+          transition={{ bounce: 1, duration: 2, delay: 2 }}
+          className='w-96 h-40 bg-red-400 rounded'
+        >
+          AboutPage
+        </motion.div>
+        {/* <motion.div
         ref={ref}
         className='w-40 h-40 rounded-full bg-blue-400'
         style={{ x, y }}
       /> */}
-      ;
-    </div>
+        ;
+      </div>
+    </PageTransition>
   );
 };
 
