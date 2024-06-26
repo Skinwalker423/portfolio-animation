@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  AnimatePresence,
-  motion,
-  type Variants,
-} from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import React, { PropsWithChildren } from "react";
 import { Navbar } from "./navbar/Navbar";
 import { usePathname } from "next/navigation";
@@ -46,7 +42,7 @@ export const TransitionProvider = ({
       >
         <motion.div
           exit={{ height: "140vh" }}
-          initial={{ height: "0vh" }}
+          initial={{ height: "0vw" }}
           animate={{
             height: "0vh",
           }}
@@ -77,9 +73,9 @@ export const TransitionProvider = ({
             "Home"}
         </motion.div>
         <motion.div
-          initial={{ height: "140vh" }}
+          initial={{ height: "140vw" }}
           animate={{
-            height: "0vh",
+            height: "0vw",
             transition: {
               delay: transitionConfig.duration,
             },
