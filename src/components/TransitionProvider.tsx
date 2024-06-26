@@ -23,6 +23,21 @@ export const TransitionProvider = ({
 }: TransitionProviderProps) => {
   const pathname = usePathname();
 
+  if (pathname === "/")
+    return (
+      <div
+        key={pathname}
+        className='w-screen h-screen bg-gradient-to-b from-[#fce2d3]/50 to-blue-100'
+      >
+        <div className='h-24'>
+          <Navbar />
+        </div>
+        <div className={`h-[calc(100vh-6rem)]`}>
+          {children}
+        </div>
+      </div>
+    );
+
   return (
     <AnimatePresence mode='wait'>
       <div
