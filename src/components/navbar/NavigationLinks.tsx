@@ -11,8 +11,6 @@ import { cn } from "@/lib/utils";
 export const NavigationLinks = () => {
   const path = usePathname();
 
-  console.log("path", path);
-
   return (
     <nav className='hidden md:flex justify-start'>
       <ul className='flex gap-8 items-center'>
@@ -21,7 +19,8 @@ export const NavigationLinks = () => {
             <Link
               className={cn(
                 "px-2 py-1",
-                path === url &&
+                (path === url ||
+                  (url === "/home" && path === "/")) &&
                   "bg-black text-white rounded scale-110"
               )}
               key={title}
