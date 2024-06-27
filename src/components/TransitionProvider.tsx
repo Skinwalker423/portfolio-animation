@@ -38,7 +38,7 @@ export const TransitionProvider = ({
     <AnimatePresence mode='wait'>
       <div
         key={pathname}
-        className='w-screen h-screen bg-gradient-to-b from-[#fce2d3]/50 to-blue-100'
+        className='w-screen min-h-screen bg-gradient-to-b from-[#fce2d3]/50 to-blue-100'
       >
         <motion.div
           exit={{ height: "140vh" }}
@@ -51,7 +51,7 @@ export const TransitionProvider = ({
             ease: "easeOut",
           }}
           className={cn(
-            "w-screen h-screen fixed rounded-b-[100px] z-30",
+            "w-screen h-full fixed rounded-b-[100px] z-30",
             transitionConfig.color
           )}
         />
@@ -89,7 +89,7 @@ export const TransitionProvider = ({
         <div className='h-24'>
           <Navbar />
         </div>
-        <div className={`h-[calc(100vh-6rem)]`}>
+        <div className={`min-h-[calc(100vh-6rem)]`}>
           {children}
         </div>
       </div>
