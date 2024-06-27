@@ -50,7 +50,7 @@ export const socials = [
   },
 ];
 
-const techXp = [
+export const techXp = [
   {
     name: "Javascript",
   },
