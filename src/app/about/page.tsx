@@ -1,16 +1,26 @@
 "use client";
-import React from "react";
-import { type Variants, motion } from "framer-motion";
+import React, { useRef } from "react";
+import { type Variants, useScroll } from "framer-motion";
 import { PageTransition } from "@/components/PageTransition";
 import { signature } from "../../../public";
 import Image from "next/image";
-import { CircleArrowDown } from "lucide-react";
+import {
+  CircleArrowDown,
+  CornerRightUp,
+} from "lucide-react";
 import { techXp } from "../../../constants";
 import { Badge } from "@/components/ui/badge";
+import { ExperienceRow } from "./_components/experience/ExperienceRow";
+import { Button } from "@/components/ui/button";
+import Brain from "./_components/Brain";
 
 const AboutPage = () => {
   // const ref = useRef(null);
   // const { x, y } = useFollowPointer(ref);
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    container: containerRef,
+  });
 
   const variants: Variants | undefined = {
     variant1: {
@@ -34,10 +44,13 @@ const AboutPage = () => {
 
   return (
     <PageTransition>
-      <div className='flex flex-col'>
-        <div className='flex md:grid md:grid-cols-2'>
+      <div className='flex flex-col w-full h-full'>
+        <div
+          ref={containerRef}
+          className='flex w-full h-full'
+        >
           {/* text */}
-          <div className='flex flex-col p-4 gap-24 md:gap-32 lg:gap-48 xl:gap-64'>
+          <div className='flex flex-col p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 gap-24 md:gap-32 lg:gap-48 xl:gap-64 w-full'>
             <div className='flex flex-col gap-12 justify-center'>
               <h1 className='text-2xl font-bold'>
                 BIOGRAPHY
@@ -94,116 +107,27 @@ const AboutPage = () => {
               id='experience'
               className='flex flex-col justify-center'
             >
-              <h1 className='text-2xl font-bold'>
+              <h1 className='text-2xl font-bold mb-12'>
                 EXPERIENCE
               </h1>
-              <div className='flex'>
-                {/* left */}
-                <div className='flex flex-col py-4 flex-1'>
-                  <div className='flex flex-col gap-6'>
-                    <h2 className='bg-white text-black px-2 py-3 font-bold text-2xl rounded-lg text-center text-clip'>
-                      Freelance Web Developer
-                    </h2>
-                    <p className='italic text-clip'>
-                      Lorem ipsum dolor, sit amet
-                      consectetur adipisicing elit.
-                      Cupiditate, et! Lorem ipsum dolor, sit
-                      amet consectetur adipisicing elit.
-                      Cupiditate, et!
-                    </p>
-                    <span className='text-red-400'>
-                      2022 - present
-                    </span>
-                    <span>
-                      <Badge className='bg-white text-black hover:text-white hover:bg-black/60'>
-                        Apple
-                      </Badge>
-                    </span>
-                  </div>
-                </div>
-                {/* center */}
-
-                <div className='flex flex-col items-center mx-2 lg:mx-10 mt-4 flex-shrink-0'>
-                  <div className='bg-white ring-4 ring-red-500 rounded-full w-4 h-4 md:w-6 md:h-6 '></div>
-                  <div className='w-2 bg-black h-full'></div>
-                </div>
-
-                {/* right */}
-                <div className='h-full w-full border flex-1'></div>
-              </div>
-              <div className='flex'>
-                {/* left */}
-                <div className='h-full w-full flex-1 border'></div>
-
-                {/* center */}
-
-                <div className='flex flex-col items-center mx-2 lg:mx-10 flex-shrink-0'>
-                  <div className='bg-white ring-4 ring-red-500 rounded-full w-4 h-4 md:w-6 md:h-6 '></div>
-                  <div className='w-2 bg-black h-full'></div>
-                </div>
-
-                {/* right */}
-                <div className='flex flex-col flex-1'>
-                  <div className='flex flex-col gap-6'>
-                    <h2 className='bg-white text-black px-2 py-3 font-bold text-2xl rounded-lg text-center text-clip'>
-                      Freelance Web Developer
-                    </h2>
-                    <p className='italic text-clip'>
-                      Lorem ipsum dolor, sit amet
-                      consectetur adipisicing elit.
-                      Cupiditate, et! Lorem ipsum dolor, sit
-                      amet consectetur adipisicing elit.
-                      Cupiditate, et!
-                    </p>
-                    <span className='text-red-400'>
-                      2022 - present
-                    </span>
-                    <span>
-                      <Badge className='bg-white text-black hover:text-white hover:bg-black/60'>
-                        Apple
-                      </Badge>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className='flex'>
-                {/* left */}
-                <div className='flex flex-col flex-1'>
-                  <div className='flex flex-col gap-6'>
-                    <h2 className='bg-white text-black px-2 py-3 font-bold text-2xl rounded-lg text-center text-clip'>
-                      Freelance Web Developer
-                    </h2>
-                    <p className='italic text-clip'>
-                      Lorem ipsum dolor, sit amet
-                      consectetur adipisicing elit.
-                      Cupiditate, et! Lorem ipsum dolor, sit
-                      amet consectetur adipisicing elit.
-                      Cupiditate, et!
-                    </p>
-                    <span className='text-red-400'>
-                      2022 - present
-                    </span>
-                    <span>
-                      <Badge className='bg-white text-black hover:text-white hover:bg-black/60'>
-                        Apple
-                      </Badge>
-                    </span>
-                  </div>
-                </div>
-                {/* center */}
-
-                <div className='flex flex-col items-center mx-2 lg:mx-10 flex-shrink-0'>
-                  <div className='bg-white ring-4 ring-red-500 rounded-full w-4 h-4 md:w-6 md:h-6 '></div>
-                  <div className='w-2 bg-black h-full'></div>
-                </div>
-
-                {/* right */}
-                <div className='h-full w-full border flex-1'></div>
-              </div>
+              <ExperienceRow />
+              <ExperienceRow variant='reverse' />
+              <ExperienceRow />
             </div>
+            <Button
+              className='max-w-40'
+              variant={"destructive"}
+              asChild
+            >
+              <a href='#' className='flex gap-3'>
+                <span>Back to top</span> <CornerRightUp />
+              </a>
+            </Button>
           </div>
           {/* image */}
-          <div className='hidden md:block'>image</div>
+          <div className='w-full h-screen hidden lg:block sticky top-0 z-30'>
+            <Brain scrollYProgress={scrollYProgress} />
+          </div>
         </div>
       </div>
     </PageTransition>
