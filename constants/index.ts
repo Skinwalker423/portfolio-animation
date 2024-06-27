@@ -49,3 +49,66 @@ export const socials = [
     href: "https://linkedin.com",
   },
 ];
+
+const techXp = [
+  {
+    name: "Javascript",
+  },
+  {
+    name: "Typescript",
+  },
+  {
+    name: "CSS3",
+  },
+  {
+    name: "Tailwind CSS",
+  },
+  {
+    name: "Shadcn/ui",
+  },
+  {
+    name: "HTML5",
+  },
+  {
+    name: "ReactJS",
+  },
+  {
+    name: "NextJS",
+  },
+  {
+    name: "Git",
+  },
+  {
+    name: "Github",
+  },
+  {
+    name: "Prisma",
+  },
+  {
+    name: "MongoDB",
+  },
+  {
+    name: "MySQL",
+  },
+  {
+    name: "PostgeSQL",
+  },
+  {
+    name: "Vite",
+  },
+  {
+    name: "Redux RTK",
+  },
+  {
+    name: "REST API",
+  },
+  {
+    name: "CRUD",
+  },
+  {
+    name: "Express",
+  },
+  {
+    name: "Node.js",
+  },
+];
