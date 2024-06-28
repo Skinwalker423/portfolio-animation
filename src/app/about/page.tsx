@@ -13,17 +13,15 @@ import { Badge } from "@/components/ui/badge";
 import { ExperienceRow } from "./_components/experience/ExperienceRow";
 import { Button } from "@/components/ui/button";
 import Brain from "./_components/Brain";
+import { SlideInSection } from "@/components/animations/SlideInSection";
 
 const AboutPage = () => {
-  // const ref = useRef(null);
-  // const { x, y } = useFollowPointer(ref);
   const containerRef = useRef(null);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end end"],
   });
-
-  console.log("scroll y", scrollYProgress);
 
   const variants: Variants | undefined = {
     variant1: {
@@ -78,6 +76,7 @@ const AboutPage = () => {
                   height={77}
                 />
               </div>
+
               <a href='#skills'>
                 <CircleArrowDown
                   className='stroke-red-500'
@@ -85,47 +84,55 @@ const AboutPage = () => {
                 />
               </a>
             </div>
-            <div
-              id='skills'
-              className='flex flex-col gap-12 justify-center'
-            >
-              <h1 className='text-2xl font-bold'>SKILLS</h1>
-              <div className='flex flex-wrap gap-2'>
-                {techXp.map((tech) => {
-                  return (
-                    <Badge key={tech.name}>
-                      {tech.name}
-                    </Badge>
-                  );
-                })}
+            <SlideInSection>
+              <div
+                id='skills'
+                className='flex flex-col gap-12 justify-center'
+              >
+                <h1 className='text-2xl font-bold'>
+                  SKILLS
+                </h1>
+                <div className='flex flex-wrap gap-2'>
+                  {techXp.map((tech) => {
+                    return (
+                      <Badge key={tech.name}>
+                        {tech.name}
+                      </Badge>
+                    );
+                  })}
+                </div>
+                <a href='#experience'>
+                  <CircleArrowDown
+                    className='stroke-red-500'
+                    size={64}
+                  />
+                </a>
               </div>
-              <a href='#experience'>
-                <CircleArrowDown
-                  className='stroke-red-500'
-                  size={64}
-                />
-              </a>
-            </div>
-            <div
-              id='experience'
-              className='flex flex-col justify-center'
-            >
-              <h1 className='text-2xl font-bold mb-12'>
-                EXPERIENCE
-              </h1>
-              <ExperienceRow />
-              <ExperienceRow variant='reverse' />
-              <ExperienceRow />
-            </div>
-            <Button
-              className='max-w-40'
-              variant={"destructive"}
-              asChild
-            >
-              <a href='#' className='flex gap-3'>
-                <span>Back to top</span> <CornerRightUp />
-              </a>
-            </Button>
+            </SlideInSection>
+            <SlideInSection>
+              <div
+                id='experience'
+                className='flex flex-col justify-center'
+              >
+                <h1 className='text-2xl font-bold mb-12'>
+                  EXPERIENCE
+                </h1>
+                <ExperienceRow />
+                <ExperienceRow variant='reverse' />
+                <ExperienceRow />
+              </div>
+            </SlideInSection>
+            <SlideInSection>
+              <Button
+                className='max-w-40'
+                variant={"destructive"}
+                asChild
+              >
+                <a href='#' className='flex gap-3'>
+                  <span>Back to top</span> <CornerRightUp />
+                </a>
+              </Button>
+            </SlideInSection>
           </div>
           {/* image */}
           <div className='w-full h-screen hidden lg:block sticky top-0 z-30'>
