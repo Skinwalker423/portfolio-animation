@@ -19,8 +19,11 @@ const AboutPage = () => {
   // const { x, y } = useFollowPointer(ref);
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
-    container: containerRef,
+    target: containerRef,
+    offset: ["start end", "end end"],
   });
+
+  console.log("scroll y", scrollYProgress);
 
   const variants: Variants | undefined = {
     variant1: {
@@ -50,7 +53,7 @@ const AboutPage = () => {
           className='flex w-full h-full'
         >
           {/* text */}
-          <div className='flex flex-col p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 gap-24 md:gap-32 lg:gap-48 xl:gap-64 w-full'>
+          <div className='flex flex-col p-4 sm:p-8 md:p-12 lg:p-20 gap-24 md:gap-32 lg:gap-48 xl:gap-64 w-full'>
             <div className='flex flex-col gap-12 justify-center'>
               <h1 className='text-2xl font-bold'>
                 BIOGRAPHY
