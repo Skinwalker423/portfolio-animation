@@ -23,7 +23,7 @@ export const TransitionProvider = ({
     return (
       <div
         key={pathname}
-        className='min-w-screen min-h-screen bg-gradient-to-b from-[#fce2d3]/50 to-blue-100'
+        className='min-w-screen min-h-screen'
       >
         <div className='h-24'>
           <Navbar />
@@ -36,10 +36,7 @@ export const TransitionProvider = ({
 
   return (
     <AnimatePresence mode='wait'>
-      <div
-        key={pathname}
-        className='w-screen min-h-screen bg-gradient-to-b from-[#fce2d3]/50 to-blue-100'
-      >
+      <div key={pathname} className='w-screen min-h-screen'>
         <motion.div
           exit={{ height: "140vh" }}
           initial={{ height: "0vw" }}

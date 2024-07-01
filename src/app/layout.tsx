@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { TransitionProvider } from "@/components/TransitionProvider";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body
+        className={cn(
+          inter.className,
+          "bg-gradient-to-b from-[#fce2d3]/50 to-blue-100"
+        )}
+      >
         <TransitionProvider>{children}</TransitionProvider>
       </body>
     </html>
