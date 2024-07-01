@@ -31,6 +31,9 @@ const PortfolioPage = () => {
       <div
         className='h-[600vh] relative'
         ref={containerRef}
+        style={{
+          position: "relative",
+        }}
       >
         <div className='w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-8xl text-center'>
           My Works
@@ -56,8 +59,14 @@ const PortfolioPage = () => {
                     <h1 className='text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl'>
                       {item.title}
                     </h1>
-                    <div className='relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]'>
-                      <Image src={item.img} alt='' fill />
+                    <div className='relative w-80 h-56 aspect-video md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]'>
+                      <Image
+                        src={item.img}
+                        alt={item.title}
+                        fill
+                        className='object-cover'
+                        sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
+                      />
                     </div>
                     <p className='w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]'>
                       {item.desc}
