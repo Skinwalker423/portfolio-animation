@@ -1,0 +1,65 @@
+"use client";
+import Link from "next/link";
+import React from "react";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+
+interface RotatingTextAroundCircleLinkProps {
+  rotatingText: string;
+  innerText?: string;
+  href?: string;
+  rotatingTextColor?: string;
+  innerTextColor?: string;
+  circleColor?: string;
+}
+
+export const RotatingTextAroundCircleLink = ({
+  rotatingText,
+  innerText,
+  href = "/",
+  rotatingTextColor = "fill-black",
+  innerTextColor = "text-white",
+  circleColor = "bg-black",
+}: RotatingTextAroundCircleLinkProps) => {
+  return (
+    <div className='relative'>
+      <motion.svg
+        animate={{
+          rotate: 360,
+        }}
+        transition={{
+          repeat: Infinity,
+          ease: "linear",
+          duration: 10,
+        }}
+        viewBox='0 0 300 300'
+        className='w-64 h-64 md:w-[500px] md:h-[500px] '
+      >
+        <defs>
+          <path
+            id='circlePath'
+            d='M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 '
+          />
+        </defs>
+        <text className=''>
+          <textPath
+            xlinkHref='#circlePath'
+            className={cn("text-xl", rotatingTextColor)}
+          >
+            {rotatingText}
+          </textPath>
+        </text>
+      </motion.svg>
+      <Link
+        className={cn(
+          "absolute top-0 left-0 right-0 bottom-0 m-auto h-16 w-16 md:w-28 md:h-28 rounded-full flex justify-center items-center",
+          innerTextColor,
+          circleColor
+        )}
+        href={href}
+      >
+        {innerText}
+      </Link>
+    </div>
+  );
+};
