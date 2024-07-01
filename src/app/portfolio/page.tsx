@@ -12,6 +12,7 @@ import Image from "next/image";
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { RotatingTextAroundCircleLink } from "@/components/animations/RotatingContactMe";
 
 const PortfolioPage = () => {
   const containerRef = useRef(null);
@@ -75,6 +76,17 @@ const PortfolioPage = () => {
             })}
           </motion.div>
         </div>
+      </div>
+      <div className='w-screen h-screen flex flex-col justify-center items-center'>
+        <h1 className='text-8xl'>
+          Do you have a project idea?
+        </h1>
+        <RotatingTextAroundCircleLink
+          rotatingText='Front-end Developer and UI Designer'
+          innerText='Contact Me'
+          rotatingTextColor='fill-secondary'
+          href='/contact'
+        />
       </div>
     </PageTransition>
   );

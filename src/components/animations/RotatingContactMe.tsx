@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { Button } from "../ui/button";
 
 interface RotatingTextAroundCircleLinkProps {
   rotatingText: string;
@@ -33,7 +34,7 @@ export const RotatingTextAroundCircleLink = ({
           duration: 10,
         }}
         viewBox='0 0 300 300'
-        className='w-64 h-64 md:w-[500px] md:h-[500px] '
+        className='w-64 h-64 md:w-[500px] md:h-[500px]'
       >
         <defs>
           <path
@@ -50,15 +51,16 @@ export const RotatingTextAroundCircleLink = ({
           </textPath>
         </text>
       </motion.svg>
-      <Link
-        className={cn(
-          "absolute top-0 left-0 right-0 bottom-0 m-auto h-16 w-16 md:w-28 md:h-28 rounded-full flex justify-center items-center",
-          innerTextColor,
-          circleColor
-        )}
-        href={href}
-      >
-        {innerText}
+      <Link className='' href={href}>
+        <Button
+          className={cn(
+            "absolute top-0 left-0 right-0 bottom-0 m-auto h-16 w-16 md:w-32 md:h-32 rounded-full flex justify-center items-center shadow-xl",
+            innerTextColor,
+            circleColor
+          )}
+        >
+          {innerText}
+        </Button>
       </Link>
     </div>
   );

@@ -53,15 +53,18 @@ export const TransitionProvider = ({
           )}
         />
         <motion.div
-          initial={{ opacity: 1 }}
+          initial={{ opacity: 1, scale: "100%" }}
           animate={{
             opacity: 0,
+            scale: "0%",
           }}
           exit={{
             opacity: 0,
+            scale: "0%",
           }}
           transition={{
-            duration: 1,
+            delay: 0.5,
+            duration: 0.75,
             ease: "easeOut",
           }}
           className='text-white fixed m-auto top-0 left-0 bottom-0 right-0 text-8xl w-fit h-fit z-50'
