@@ -11,7 +11,7 @@ export const HeroImage = ({
   alt = "hero image",
 }: HeroImageProps) => {
   return (
-    <div className='relative flex-1 w-full'>
+    <div className='relative flex-1 self-center w-full h-full'>
       <Image
         src={src}
         alt={alt}

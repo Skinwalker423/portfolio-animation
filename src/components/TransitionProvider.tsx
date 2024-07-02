@@ -67,7 +67,7 @@ export const TransitionProvider = ({
             duration: 0.75,
             ease: "easeOut",
           }}
-          className='text-white fixed m-auto top-0 left-0 bottom-0 right-0 text-8xl w-fit h-fit z-50'
+          className='text-white fixed m-auto top-0 left-0 bottom-0 right-0 text-4xl lg:text-8xl w-fit h-fit z-50'
         >
           {pathname.toUpperCase().replace("/", "") ||
             "Home"}

@@ -19,7 +19,7 @@ export const HeroTextBox = ({
   buttonTitleTwo = "Get started",
 }: HeroTextBoxProps) => {
   return (
-    <div className='flex flex-col flex-1 w-full px-2 justify-center gap-8'>
+    <div className='flex flex-col flex-1 w-full px-2 justify-center gap-5 sm:gap-8'>
       <h1 className='text-4xl lg:text-6xl font-bold'>
         {title}
       </h1>
