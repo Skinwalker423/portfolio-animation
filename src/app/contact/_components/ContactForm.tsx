@@ -45,7 +45,7 @@ export function ContactForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className='space-y-8 w-full'
+        className='space-y-8 w-full p-24 bg-neutral-100 rounded-xl'
       >
         <FormField
           control={form.control}
@@ -58,6 +58,7 @@ export function ContactForm() {
                   type='email'
                   placeholder='myemail@example.com'
                   {...field}
+                  className='bg-transparent outline-none ring-offset-0 border border-b-4 border-b-black focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none border-t-0 border-x-0 focus-visible:border-b-secondary'
                 />
               </FormControl>
               <FormDescription>
@@ -77,6 +78,7 @@ export function ContactForm() {
                 <Textarea
                   placeholder='Have any questions?'
                   {...field}
+                  className='bg-transparent outline-none ring-offset-0 border border-b-4 border-b-black focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none border-t-0 border-x-0 focus-visible:border-b-secondary'
                 />
               </FormControl>
               <FormDescription>
@@ -86,7 +88,9 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type='submit'>Submit</Button>
+        <Button className='w-full' type='submit'>
+          Send
+        </Button>
       </form>
     </Form>
   );
