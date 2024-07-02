@@ -13,6 +13,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { RotatingTextAroundCircleLink } from "@/components/animations/RotatingContactMe";
+import { SlideInSection } from "@/components/animations/SlideInSection";
+import { Button } from "@/components/ui/button";
+import { CornerRightUp } from "lucide-react";
 
 const PortfolioPage = () => {
   const containerRef = useRef(null);
@@ -29,6 +32,7 @@ const PortfolioPage = () => {
   return (
     <PageTransition>
       <div
+        id='top'
         className='h-[600vh] relative'
         ref={containerRef}
         style={{
@@ -86,8 +90,8 @@ const PortfolioPage = () => {
           </motion.div>
         </div>
       </div>
-      <div className='w-screen h-screen flex flex-col justify-center items-center'>
-        <h1 className='text-8xl'>
+      <div className='w-screen h-[calc(100vh-5rem)] sm:h-[calc(100vh-7rem)] md:h-[calc(100vh-9rem)] lg:h-[calc(100vh-12rem)]  flex flex-col justify-center items-center md:pt-40 px-5'>
+        <h1 className='text-4xl md:text-6xl lg:text-8xl text-center'>
           Do you have a project idea?
         </h1>
         <RotatingTextAroundCircleLink
@@ -96,6 +100,22 @@ const PortfolioPage = () => {
           rotatingTextColor='fill-secondary'
           href='/contact'
         />
+      </div>
+      <div className='p-4 sm:p-8 md:p-12 lg:p-20 xl:px-52'>
+        <SlideInSection>
+          <Button
+            className='max-w-40'
+            variant={"destructive"}
+            asChild
+          >
+            <Link
+              href={"/portfolio"}
+              className='flex gap-3'
+            >
+              <span>Back to top</span> <CornerRightUp />
+            </Link>
+          </Button>
+        </SlideInSection>
       </div>
     </PageTransition>
   );
