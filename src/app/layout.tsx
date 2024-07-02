@@ -22,7 +22,7 @@ export default function RootLayout({
       <body
         className={cn(
           inter.className,
-          "bg-gradient-to-b from-[#fce2d3]/50 to-blue-100"
+          "bg-gradient-to-b from-secondary to-blue-100"
         )}
       >
         <TransitionProvider>{children}</TransitionProvider>

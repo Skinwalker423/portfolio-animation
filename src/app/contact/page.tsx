@@ -3,6 +3,7 @@
 import React from "react";
 import { PageTransition } from "@/components/PageTransition";
 import { motion } from "framer-motion";
+import { ContactForm } from "./_components/ContactForm";
 
 const GREETING = "Say Hello!";
 
@@ -11,8 +12,8 @@ const ContactPage = () => {
 
   return (
     <PageTransition>
-      <div className='h-[calc(100vh-6rem)] lg:h-full w-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 justify-center'>
-        <div className='flex-1 items-center'>
+      <div className='h-[calc(100vh-6rem)] w-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 justify-center'>
+        <div className='flex flex-1 items-center justify-center text-4xl lg:text-6xl'>
           <div className='flex gap-2'>
             {splitGreeting.map((letter, index) => {
               return (
@@ -37,7 +38,9 @@ const ContactPage = () => {
             })}
           </div>
         </div>
-        <div className='flex-1'>bottom / right &nbsp;</div>
+        <div className='flex w-full flex-1 items-center'>
+          <ContactForm />
+        </div>
       </div>
     </PageTransition>
   );
