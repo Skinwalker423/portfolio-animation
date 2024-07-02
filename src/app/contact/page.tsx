@@ -13,16 +13,14 @@ const ContactPage = () => {
     <PageTransition>
       <div className='h-[calc(100vh-6rem)] lg:h-full w-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 justify-center'>
         <div className='flex-1 items-center'>
-          <div className='flex'>
+          <div className='flex gap-2'>
             {splitGreeting.map((letter, index) => {
-              console.log(typeof letter);
-
               return (
                 <motion.span
                   initial={{ opacity: 1 }}
                   animate={{ opacity: 0 }}
                   transition={{
-                    ease: "easeIn",
+                    ease: "easeInOut",
                     delay: index * 0.1,
                     duration: 3,
                     repeat: Infinity,
@@ -30,6 +28,10 @@ const ContactPage = () => {
                   key={index}
                 >
                   {letter === " " ? <>&nbsp;</> : letter}
+                  <span>
+                    {splitGreeting.length - 1 === index &&
+                      "😊"}
+                  </span>
                 </motion.span>
               );
             })}
