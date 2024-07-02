@@ -34,7 +34,7 @@ export const RotatingTextAroundCircleLink = ({
           duration: 10,
         }}
         viewBox='0 0 300 300'
-        className='w-64 h-64 md:w-[500px] md:h-[500px]'
+        className='w-80 h-80 md:w-[500px] md:h-[500px]'
       >
         <defs>
           <path
@@ -54,7 +54,7 @@ export const RotatingTextAroundCircleLink = ({
       <Link className='' href={href}>
         <Button
           className={cn(
-            "absolute top-0 left-0 right-0 bottom-0 m-auto h-16 w-16 md:w-32 md:h-32 rounded-full flex justify-center items-center shadow-xl",
+            "absolute top-0 left-0 right-0 bottom-0 m-auto h-24 w-24 md:w-32 md:h-32 rounded-full flex justify-center items-center shadow-xl",
             innerTextColor,
             circleColor
           )}
