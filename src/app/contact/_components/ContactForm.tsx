@@ -18,15 +18,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { sendCommentEmail } from "@/actions/email";
-
-export const formSchema = z.object({
-  email: z.string().email({
-    message: "Not a valid email",
-  }),
-  comment: z.string().min(1, {
-    message: "Please add a comment",
-  }),
-});
+import { formSchema } from "@/lib/schemas";
 
 export function ContactForm() {
   const [message, setMessage] = useState("");
@@ -42,9 +34,9 @@ export function ContactForm() {
   async function onSubmit(
     values: z.infer<typeof formSchema>
   ) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+    setMessage("");
+    seterror("");
+
     const emailResonse = await sendCommentEmail(values);
 
     if (emailResonse.error) {
@@ -70,6 +62,7 @@ export function ContactForm() {
               <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input
+                  disabled={form.formState.isSubmitting}
                   type='email'
                   placeholder='myemail@example.com'
                   {...field}
@@ -91,6 +84,7 @@ export function ContactForm() {
               <FormLabel>Comment</FormLabel>
               <FormControl>
                 <Textarea
+                  disabled={form.formState.isSubmitting}
                   placeholder='Have any questions?'
                   {...field}
                   className='bg-transparent outline-none ring-offset-0 border border-b-4 border-b-black focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none border-t-0 border-x-0 focus-visible:border-b-secondary'
@@ -103,18 +97,26 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button className='w-full' type='submit'>
-          Send
+        <Button
+          disabled={form.formState.isSubmitting}
+          className='w-full'
+          type='submit'
+        >
+          {form.formState.isSubmitting
+            ? "Sending..."
+            : "Send"}
         </Button>
+        {error && (
+          <p className='text-red-500'>
+            Error message: {error}
+          </p>
+        )}
+        {message && (
+          <p className='text-green-500'>
+            message: {message}
+          </p>
+        )}
       </form>
-      {error && (
-        <p className='text-red-500'>
-          Error message: {error}
-        </p>
-      )}
-      {message && (
-        <p className='text-green-500'>message: {message}</p>
-      )}
     </Form>
   );
 }
