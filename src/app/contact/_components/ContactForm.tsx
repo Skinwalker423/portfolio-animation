@@ -1,4 +1,5 @@
 "use client";
+import React, { useState } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -16,8 +17,9 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { sendCommentEmail } from "@/actions/email";
 
-const formSchema = z.object({
+export const formSchema = z.object({
   email: z.string().email({
     message: "Not a valid email",
   }),
@@ -27,6 +29,8 @@ const formSchema = z.object({
 });
 
 export function ContactForm() {
+  const [message, setMessage] = useState("");
+  const [error, seterror] = useState("");
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,10 +39,21 @@ export function ContactForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(
+    values: z.infer<typeof formSchema>
+  ) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
+    const emailResonse = await sendCommentEmail(values);
+
+    if (emailResonse.error) {
+      seterror(emailResonse.error);
+    }
+    if (emailResonse.message) {
+      setMessage(emailResonse.message);
+      form.reset();
+    }
   }
 
   return (
@@ -92,6 +107,14 @@ export function ContactForm() {
           Send
         </Button>
       </form>
+      {error && (
+        <p className='text-red-500'>
+          Error message: {error}
+        </p>
+      )}
+      {message && (
+        <p className='text-green-500'>message: {message}</p>
+      )}
     </Form>
   );
 }
