@@ -1,6 +1,4 @@
-"use server";
-
-import { formSchema } from "@/app/contact/_components/ContactForm";
+import { formSchema } from "@/lib/schemas";
 import emailjs from "@emailjs/browser";
 import { z } from "zod";
 
@@ -12,16 +10,17 @@ export const sendCommentEmail = async (
 
     if (!parsedData.success) {
       return {
-        error: parsedData.error.message,
+        error: `parsed data error, ${parsedData.error.message}`,
       };
     }
 
-    const confirmationEmail = await emailjs.send(
+    await emailjs.send(
       process.env.NEXT_PUBLIC_SERVICE_ID as string,
       process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
       {
         user_email: parsedData.data.email,
         user_message: parsedData.data.comment,
+        to_name: "Luis",
       },
       {
         publicKey: process.env
@@ -30,17 +29,17 @@ export const sendCommentEmail = async (
     );
 
     return {
-      message: confirmationEmail.text,
+      message: "Message sent. Thank you for your interest.",
     };
   } catch (error) {
     if (error instanceof Error) {
       return {
-        error: error.message,
+        error: `emailjs error, ${error.message}`,
       };
     } else {
+      console.error(error);
       return {
-        error:
-          "Something went wrong with sending the email",
+        error: `Something went wrong with sending the email. Try again later`,
       };
     }
   }
