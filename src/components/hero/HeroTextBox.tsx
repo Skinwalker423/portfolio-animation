@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 interface HeroTextBoxProps {
   title?: string;
@@ -21,10 +22,16 @@ export const HeroTextBox = ({
       </h1>
       <p className='text-clip lg:text-xl'>{description}</p>
       <div className='space-x-3'>
-        <Button className='ring-1' variant={"outline"}>
-          {buttonTitleOne}
+        <Button
+          asChild
+          className='ring-1'
+          variant={"outline"}
+        >
+          <Link href={"/portfolio"}>{buttonTitleOne}</Link>
         </Button>
-        <Button>{buttonTitleTwo}</Button>
+        <Button asChild>
+          <Link href={"/contact"}>{buttonTitleTwo}</Link>
+        </Button>
       </div>
     </div>
   );
