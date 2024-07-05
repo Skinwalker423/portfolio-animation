@@ -7,6 +7,7 @@ import instagram from "./instagram.png";
 import linkedin from "./linkedin.png";
 import pinterest from "./pinterest.png";
 import signature from "./signature.svg";
+import twitter from "./twitter.png";
 
 export {
   dribbble,
@@ -18,4 +19,5 @@ export {
   linkedin,
   pinterest,
   signature,
+  twitter,
 };
