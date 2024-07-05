@@ -9,12 +9,8 @@ interface HeroTextBoxProps {
 }
 
 export const HeroTextBox = ({
-  title = "Crafting Digital Experiences, Designing Tomorrow.",
-  description = `Lorem ipsum dolor, sit amet consectetur adipisicing
-        elit. Vel, quis earum. Eos laboriosam soluta quae
-        illo molestiae, sapiente quidem dignissimos
-        praesentium quo! Sint totam omnis, necessitatibus
-        mollitia illo optio ipsa!`,
+  title = "Imagine Today. Design tomorrow. Create timeless experiences.",
+  description = `Are you looking for a creative and reliable developer to bring your web projects to life? I specialize in crafting functional web apps and beautiful websites that leave a lasting impact.`,
   buttonTitleOne = "Learn more",
   buttonTitleTwo = "Get started",
 }: HeroTextBoxProps) => {

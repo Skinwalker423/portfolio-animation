@@ -7,7 +7,7 @@ interface HeroImageProps {
 }
 
 export const HeroImage = ({
-  src = "/hero.png",
+  src = "/hero4.png",
   alt = "hero image",
 }: HeroImageProps) => {
   return (
