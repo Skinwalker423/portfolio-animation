@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -21,8 +22,6 @@ import { sendCommentEmail } from "@/actions/email";
 import { formSchema } from "@/lib/schemas";
 
 export function ContactForm() {
-  const [message, setMessage] = useState("");
-  const [error, seterror] = useState("");
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -34,16 +33,25 @@ export function ContactForm() {
   async function onSubmit(
     values: z.infer<typeof formSchema>
   ) {
-    setMessage("");
-    seterror("");
-
     const emailResonse = await sendCommentEmail(values);
 
     if (emailResonse.error) {
-      seterror(emailResonse.error);
+      toast.error(emailResonse.error, {
+        closeButton: true,
+        duration: 10000,
+        style: {
+          backgroundColor: "pink",
+          color: "red",
+        },
+      });
     }
     if (emailResonse.message) {
-      setMessage(emailResonse.message);
+      toast.success(emailResonse.message, {
+        style: {
+          backgroundColor: "lightgreen",
+          color: "green",
+        },
+      });
       form.reset();
     }
   }
@@ -52,14 +60,16 @@ export function ContactForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className='space-y-8 w-full p-24 bg-neutral-100 rounded-xl'
+        className='space-y-8 w-full px-12 py-4 sm:p-20 md:p-24 lg:p-16 bg-neutral-100 rounded-xl'
       >
         <FormField
           control={form.control}
           name='email'
           render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
+            <FormItem className='group'>
+              <FormLabel className='group-focus-within:text-secondary'>
+                Email
+              </FormLabel>
               <FormControl>
                 <Input
                   disabled={form.formState.isSubmitting}
@@ -80,8 +90,10 @@ export function ContactForm() {
           control={form.control}
           name='comment'
           render={({ field }) => (
-            <FormItem>
-              <FormLabel>Comment</FormLabel>
+            <FormItem className='group'>
+              <FormLabel className='group-focus-within:text-secondary'>
+                Comment
+              </FormLabel>
               <FormControl>
                 <Textarea
                   disabled={form.formState.isSubmitting}
@@ -106,16 +118,14 @@ export function ContactForm() {
             ? "Sending..."
             : "Send"}
         </Button>
-        {error && (
-          <p className='text-red-500'>
-            Error message: {error}
-          </p>
+        {/* {error && (
+          <p className='text-red-500 h-5'>{error}</p>
         )}
         {message && (
-          <p className='text-green-500'>
-            message: {message}
+          <p className='text-green-500 font-semibold text-lg h-5'>
+            {message}
           </p>
-        )}
+        )} */}
       </form>
     </Form>
   );

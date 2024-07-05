@@ -12,7 +12,7 @@ const ContactPage = () => {
         <div className='flex flex-1 items-center justify-center'>
           <TypingText text={GREETING} />
         </div>
-        <div className='flex w-full flex-1 items-center'>
+        <div className='flex w-full flex-grow lg:flex-1 items-center'>
           <ContactForm />
         </div>
       </div>
