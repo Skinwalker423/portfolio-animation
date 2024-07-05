@@ -24,14 +24,15 @@ export const socials = [
     href: "https://github.com/Skinwalker423",
   },
   {
-    alt: "Facebook icon",
-    src: "/facebook.png",
-    href: "https://facebook.com",
+    alt: "Linkedin icon",
+    src: "/linkedin.png",
+    href: "https://www.linkedin.com/in/art-gonzalez-a33799235/",
   },
+
   {
     alt: "Dribble icon",
     src: "/dribbble.png",
-    href: "https://dribbble.com",
+    href: "https://dribbble.com/Skinwalker423",
   },
   {
     alt: "Instagram icon",
@@ -39,14 +40,15 @@ export const socials = [
     href: "https://instagram.com",
   },
   {
+    alt: "X icon",
+    src: "/twitter.png",
+    href: "https://x.com/artgonzalez423",
+  },
+
+  {
     alt: "Pinterest icon",
     src: "/pinterest.png",
-    href: "https://pinterest.com",
-  },
-  {
-    alt: "Linkedin icon",
-    src: "/linkedin.png",
-    href: "https://linkedin.com",
+    href: "https://www.pinterest.com/Skinwalker423",
   },
 ];
 
