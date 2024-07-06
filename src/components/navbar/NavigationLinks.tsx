@@ -18,7 +18,7 @@ export const NavigationLinks = () => {
           return (
             <Link
               className={cn(
-                "px-2 py-1",
+                "px-2 py-1 hover:text-secondary-foreground",
                 (path === url ||
                   (url === "/home" && path === "/")) &&
                   "bg-black text-white rounded scale-110"
