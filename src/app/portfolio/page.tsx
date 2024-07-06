@@ -40,7 +40,7 @@ const PortfolioPage = () => {
         }}
       >
         <div className='w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-8xl text-center'>
-          My Works
+          My Projects
         </div>
         <div className='sticky top-0 flex h-screen gap-4 items-center overflow-hidden'>
           <motion.div style={{ x }} className='flex'>
@@ -68,21 +68,22 @@ const PortfolioPage = () => {
                         src={item.img}
                         alt={item.title}
                         fill
-                        className='object-cover'
+                        className='object-contain'
                         sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
                       />
                     </div>
                     <p className='w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]'>
                       {item.desc}
                     </p>
-                    <Link
+                    <a
                       href={item.link}
                       className='flex justify-end'
+                      target='_blank'
                     >
                       <button className='p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded'>
                         See Demo
                       </button>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               );
