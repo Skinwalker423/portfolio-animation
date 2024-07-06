@@ -10,7 +10,7 @@ interface HeroTextBoxProps {
 }
 
 export const HeroTextBox = ({
-  title = "Imagine Today. Design tomorrow. Create timeless experiences.",
+  title = "Imagine. Design. Create timeless experiences.",
   description = `Are you looking for a creative and reliable developer to bring your web projects to life? I specialize in crafting functional web apps and beautiful websites that leave a lasting impact.`,
   buttonTitleOne = "Learn more",
   buttonTitleTwo = "Get started",
@@ -18,7 +18,9 @@ export const HeroTextBox = ({
   return (
     <div className='flex flex-col flex-1 w-full px-2 justify-center gap-5 sm:gap-8'>
       <h1 className='text-4xl lg:text-6xl font-bold'>
-        {title}
+        Imagine.&nbsp;
+        <span className='text-[#e71c97]'>Design.</span>{" "}
+        Create timeless experiences.
       </h1>
       <p className='text-clip lg:text-xl'>{description}</p>
       <div className='space-x-3'>
