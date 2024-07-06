@@ -13,10 +13,10 @@ export const Socials = () => {
     <div className='hidden md:flex gap-4 justify-end'>
       {socials.map(({ alt, href, src }) => {
         return (
-          <TooltipProvider>
+          <TooltipProvider key={alt}>
             <Tooltip>
               <TooltipTrigger>
-                <a target='_blank' key={alt} href={href}>
+                <a target='_blank' href={href}>
                   <Image
                     src={src}
                     alt={alt}
