@@ -8,6 +8,10 @@ import linkedin from "./linkedin.png";
 import pinterest from "./pinterest.png";
 import signature from "./signature.svg";
 import twitter from "./twitter.png";
+import leftovers from "./leftovers.png";
+import memories from "./memories_bg.png";
+import snakeGame from "./snake_game.png";
+import nikeLanding from "./nike_landing_page.png";
 
 export {
   dribbble,
@@ -20,4 +24,8 @@ export {
   pinterest,
   signature,
   twitter,
+  leftovers,
+  memories,
+  snakeGame,
+  nikeLanding,
 };
