@@ -1,3 +1,10 @@
+import {
+  leftovers,
+  memories,
+  nikeLanding,
+  snakeGame,
+} from "../public";
+
 export const links = [
   {
     url: "/home",
@@ -120,32 +127,36 @@ export const projects = [
     id: 1,
     color: "from-red-300 to-blue-300",
     title: "NextJS Food Sharing app",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "https://github.com/Skinwalker423",
+    desc: "The largest food sharing platform, where you can find local authentic meals being prepared by the community and shared to the community. Search for local participating meal preppers!",
+    img: leftovers,
+    link: "https://leftovers23.vercel.app/",
   },
   {
     id: 2,
     color: "from-blue-300 to-violet-300",
     title: "Next.js Memories game",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "https://github.com/Skinwalker423",
+    desc: `Picture memory games have been a beloved pastime
+          for generations. Now, you can take the fun to a
+          whole new level by using any pictures you like -
+          family photos, vacation snapshots, artwork, even
+          memes!`,
+    img: memories,
+    link: "https://github.com/Skinwalker423/memories",
   },
   {
     id: 3,
     color: "from-violet-300 to-purple-300",
-    title: "Laravel blog app",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "https://github.com/Skinwalker423",
+    title: "Shoe Shop Landing Page",
+    desc: "Discover stlyish new arrivals, quality, comfort, and innovation for you active needs. Check out the store landing page.",
+    img: nikeLanding,
+    link: "https://main--shoeshoplanding.netlify.app/",
   },
   {
     id: 4,
     color: "from-green-300 to-red-300",
     title: "Python Snake game",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    link: "https://github.com/Skinwalker423",
+    desc: "A simple version of a classic game Snake. It keeps track of the highest score, so challenge yourself to see how high you can go!",
+    img: snakeGame,
+    link: "https://github.com/Skinwalker423/snake-game",
   },
 ];
