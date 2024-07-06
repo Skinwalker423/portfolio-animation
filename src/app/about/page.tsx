@@ -117,9 +117,51 @@ const AboutPage = () => {
                 <h1 className='text-2xl font-bold mb-12'>
                   EXPERIENCE
                 </h1>
-                <ExperienceRow />
-                <ExperienceRow variant='reverse' />
-                <ExperienceRow />
+                <ExperienceRow
+                  title='Web Developer'
+                  company='Freelance'
+                  date='2022 - Present'
+                  description='Collaborate with clients, website and graphic designers, monitor website traffic, troubleshoot website problems when they arise, and update websites as necessary.'
+                />
+                <ExperienceRow
+                  variant='reverse'
+                  title='Junior Software Developer'
+                  company='100 Devs'
+                  date='2020 - 2022'
+                  description='A community of aspiring developers working on community based projects and collaborating to design web apps, while learning different technologies.'
+                />
+                <ExperienceRow
+                  company='LBCC'
+                  title='Electrical Technology'
+                  description='Fundamentals of circuitry, Programming Control Logic, Arduino, Solidworks, Network installation (CCNA), and troubleshooting'
+                  date='2012 - 2016'
+                />
+                <ExperienceRow
+                  variant='reverse'
+                  title='Inside Sales'
+                  company='Public Storage'
+                  date='2010 - 2012'
+                  description='Receive inbound calls from potential customers to maximize reservations and rentals in an expert consultative approach. Consistently provide exceptional customer service and professionalism to all our customers'
+                />
+                <ExperienceRow
+                  title='Travel Agent Sales'
+                  company='Disney'
+                  date='2009 - 2010'
+                  description='Engage with Guests exploring their desired vacation experience, providing recommendations and direction for a vacation at Walt Disney resorts worldwide.'
+                />
+                <ExperienceRow
+                  variant='reverse'
+                  title='Assistant Manager Customer Service'
+                  company="Chevron / Terrible's Casino"
+                  date='2006 - 2009'
+                  description='Payroll, accounts payable, accounts receivable, inventory managament, and train customer service agents.'
+                />
+                <ExperienceRow
+                  title='Business Admin Information Systems'
+                  company='Cerritos College'
+                  description='Emphasis on Managament Information systems and accounting'
+                  date='2006'
+                />
               </div>
             </SlideInSection>
             <SlideInSection>

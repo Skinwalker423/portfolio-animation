@@ -11,10 +11,10 @@ interface ExperienceListItemProps {
 }
 
 export const ExperienceListItem = ({
-  company = "Apple",
-  date = "2022 - present",
-  description = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, et! Lorem ipsumdolor, sit amet consectetur adipisicing elit. Cupiditate, et!",
-  title = "Freelance Web Developer",
+  company,
+  date,
+  description,
+  title,
   variant,
 }: ExperienceListItemProps) => {
   return (

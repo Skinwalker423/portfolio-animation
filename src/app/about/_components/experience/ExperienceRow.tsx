@@ -4,31 +4,47 @@ import { CenterLine } from "./CenterLine";
 import { EmptyListItem } from "./EmptyListItem";
 
 interface ExperienceRowProps {
-  title: string;
-  description: string;
-  date: string;
-  company: string;
+  title?: string;
+  description?: string;
+  date?: string;
+  company?: string;
   variant?: "reverse";
 }
 
-export const ExperienceRow = (
-  props: ExperienceRowProps
-) => {
+export const ExperienceRow = ({
+  company = "Apple",
+  date = "2022 - present",
+  description = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, et! Lorem ipsumdolor, sit amet consectetur adipisicing elit. Cupiditate, et!",
+  title = "Freelance Web Developer",
+  variant,
+}: ExperienceRowProps) => {
   return (
     <div className='flex'>
       {/* left */}
-      {props.variant ? (
+      {variant ? (
         <EmptyListItem />
       ) : (
-        <ExperienceListItem {...props} />
+        <ExperienceListItem
+          company={company}
+          date={date}
+          description={description}
+          title={title}
+          variant={variant}
+        />
       )}
 
       {/* center */}
       <CenterLine />
 
       {/* right */}
-      {props.variant ? (
-        <ExperienceListItem {...props} />
+      {variant ? (
+        <ExperienceListItem
+          company={company}
+          date={date}
+          description={description}
+          title={title}
+          variant={variant}
+        />
       ) : (
         <EmptyListItem />
       )}
