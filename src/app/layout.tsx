@@ -8,7 +8,7 @@ import { Toaster } from "@/components/ui/sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Art dev portfolio app",
+  title: "Art Gonzalez portfolio app",
   description:
     "Crafting user-centric websites that convert. See my portfolio of various projects, boosting user experiences.",
 };
