@@ -46,7 +46,6 @@ const PortfolioPage = () => {
           <motion.div style={{ x }} className='flex'>
             <div className='h-screen w-screen flex items-center justify-center bg-gradient-to-r from-cyan-300 to-orange-200' />
             {projects.map((item, index) => {
-              console.log(item.color);
               return (
                 <div
                   className={cn(
@@ -72,18 +71,18 @@ const PortfolioPage = () => {
                         sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
                       />
                     </div>
-                    <p className='w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]'>
+                    <p className='w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px] font-bold'>
                       {item.desc}
                     </p>
-                    <a
-                      href={item.link}
-                      className='flex justify-end'
-                      target='_blank'
+                    <Button
+                      asChild
+                      size={"lg"}
+                      className='w-32 flex self-end p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-secondary text-secondary-foreground hover:bg-yellow-600'
                     >
-                      <button className='p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded'>
+                      <a href={item.link} target='_blank'>
                         See Demo
-                      </button>
-                    </a>
+                      </a>
+                    </Button>
                   </div>
                 </div>
               );
