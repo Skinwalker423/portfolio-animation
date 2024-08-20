@@ -61,10 +61,16 @@ export const socials = [
 
 export const techXp = [
   {
+    name: "A+ Certified",
+  },
+  {
     name: "Javascript",
   },
   {
     name: "Typescript",
+  },
+  {
+    name: "Python",
   },
   {
     name: "CSS3",

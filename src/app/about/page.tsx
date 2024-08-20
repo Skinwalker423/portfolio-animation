@@ -54,20 +54,20 @@ const AboutPage = () => {
           <div className='flex flex-col p-4 sm:p-8 md:p-12 lg:p-20 gap-24 md:gap-32 lg:gap-48 xl:gap-64 w-full'>
             <div className='flex flex-col gap-12 justify-center'>
               <h1 className='text-2xl font-bold'>
-                BIOGRAPHY
+                Background
               </h1>
               <p className='text-lg'>
-                Lorem, ipsum dolor sit amet consectetur
-                adipisicing elit. Possimus magni blanditiis
-                numquam perferendis consequuntur? Quibusdam
-                autem eaque, rem culpa est enim eligendi
-                molestiae incidunt explicabo sint odio
-                numquam qui voluptatem?
+                Highly motivated with years of sales,
+                customer service experience, and a dedicated
+                tech enthusiast seeking IT Networking roles
+                to leverage strong problem-solving,
+                communication, and active listening skills.
+                Proven ability to resolve customer issues
+                promptly and efficiently, maintain a
+                positive and professional demeanor, and
+                adapt to diverse communication styles.
               </p>
-              <span className='italic'>
-                Lorem, ipsum dolor sit amet consectetur
-                adipisicing elit.
-              </span>
+
               <div className='self-end'>
                 <Image
                   src={signature}
@@ -120,47 +120,60 @@ const AboutPage = () => {
                 <ExperienceRow
                   title='Web Developer'
                   company='Freelance'
-                  date='2022 - Present'
+                  date='2021 - Present'
                   description='Collaborate with clients, website and graphic designers, monitor website traffic, troubleshoot website problems when they arise, and update websites as necessary.'
                 />
                 <ExperienceRow
                   variant='reverse'
-                  title='Junior Software Developer'
+                  title='Aspiring Developer'
                   company='100 Devs'
-                  date='2020 - 2022'
+                  date='2020 - 2021'
                   description='A community of aspiring developers working on community based projects and collaborating to design web apps, while learning different technologies.'
                 />
                 <ExperienceRow
-                  company='LBCC'
-                  title='Electrical Technology'
+                  company='LBCC Long Beach City College'
+                  title='A.S. Electrical Technology'
                   description='Fundamentals of circuitry, Programming Control Logic, Arduino, Solidworks, Network installation (CCNA), and troubleshooting'
-                  date='2012 - 2016'
+                  date='2016'
                 />
                 <ExperienceRow
                   variant='reverse'
                   title='Inside Sales'
                   company='Public Storage'
-                  date='2010 - 2012'
+                  date=''
                   description='Receive inbound calls from potential customers to maximize reservations and rentals in an expert consultative approach. Consistently provide exceptional customer service and professionalism to all our customers'
                 />
                 <ExperienceRow
-                  title='Travel Agent Sales'
+                  title='Travel Agent / Sales'
                   company='Disney'
-                  date='2009 - 2010'
+                  date=''
                   description='Engage with Guests exploring their desired vacation experience, providing recommendations and direction for a vacation at Walt Disney resorts worldwide.'
                 />
                 <ExperienceRow
                   variant='reverse'
                   title='Assistant Manager Customer Service'
                   company="Chevron / Terrible's Casino"
-                  date='2006 - 2009'
+                  date=''
                   description='Payroll, accounts payable, accounts receivable, inventory managament, and train customer service agents.'
                 />
                 <ExperienceRow
-                  title='Business Admin Information Systems'
+                  title='Sales Associate'
+                  company='Radioshack'
+                  description='Interacting with customers and helping them find the products for their DIY electronics projects and home networking needs such as CAT5 cables, RJ-45 connectors, modems, adapters and couplers'
+                  date=''
+                />
+                <ExperienceRow
+                  variant='reverse'
+                  title='A.A. Business Administration'
                   company='Cerritos College'
-                  description='Emphasis on Managament Information systems and accounting'
+                  description='A.A. Emphasis on Computer Information Systems'
                   date='2006'
+                />
+                <ExperienceRow
+                  title='Sales Representative'
+                  company='Verizon Wireless / Mobile Telesys'
+                  description='Build rapport with customers to sell Verizon Wireless cellphones, run credit checks, and established service contracts'
+                  date=''
                 />
               </div>
             </SlideInSection>

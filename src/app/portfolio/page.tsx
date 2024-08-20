@@ -71,7 +71,7 @@ const PortfolioPage = () => {
                         sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
                       />
                     </div>
-                    <p className='w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px] font-bold'>
+                    <p className='w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px] font-bold text-black'>
                       {item.desc}
                     </p>
                     <Button

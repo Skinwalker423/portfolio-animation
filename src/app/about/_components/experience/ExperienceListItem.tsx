@@ -35,7 +35,7 @@ export const ExperienceListItem = ({
           {date}
         </span>
         <span>
-          <Badge className='bg-white text-black text-sm font-semibold hover:text-white hover:bg-black/60'>
+          <Badge className='bg-white text-black text-sm md:text-lg font-semibold hover:text-white hover:bg-black/60'>
             {company}
           </Badge>
         </span>
