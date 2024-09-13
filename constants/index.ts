@@ -147,7 +147,7 @@ export const projects = [
           family photos, vacation snapshots, artwork, even
           memes!`,
     img: memories,
-    link: "https://github.com/Skinwalker423/memories",
+    link: "https://memories-skinwalker423s-projects.vercel.app/",
   },
   {
     id: 3,
